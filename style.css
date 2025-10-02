@@ -36,7 +36,8 @@ body {
 /* FLOATING NAVIGATION */
 .floating-nav {
     position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
-    border-radius: 30px; padding: 8px 16px; display: flex; gap: 8px; z-index: 1000;
+    border-radius: 30px; padding: 8px; /* Adjusted padding for a snugger fit */
+    display: flex; gap: 8px; z-index: 1000;
     transition: all 0.3s ease-in-out; height: 54px; align-items: center;
 }
 .nav-link {
@@ -49,7 +50,7 @@ body {
 
 /* MAIN CONTENT */
 #main-content {
-    padding: 35vh 5% 100px; /* Increased bottom padding for footer */
+    padding: 35vh 5% 100px;
     max-width: 1200px; margin: 0 auto;
 }
 .page { display: none; }
@@ -193,13 +194,20 @@ body.modal-is-open .back-btn-modal {
     height: 24px;
 }
 
-
 /* RESPONSIVE DESIGN */
 @media (max-width: 768px) {
     .uniform-grid { grid-template-columns: 1fr; }
     .name-title { font-size: 3rem; }
     #main-content { padding-top: 30vh; }
-    .scrolling-header, .back-btn-modal { left: 20px; top: 28px; }
+    
+    /* Hide scrolling header on small screens */
+    .scrolling-header {
+        display: none;
+    }
+    .back-btn-modal { 
+        left: 20px; 
+        top: 28px; 
+    }
     .project-modal-content { padding-bottom: 120px; }
     .project-body h2 { font-size: 2rem; }
 
